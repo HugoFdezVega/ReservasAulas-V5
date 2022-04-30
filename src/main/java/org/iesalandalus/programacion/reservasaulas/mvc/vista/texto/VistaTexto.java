@@ -1,4 +1,4 @@
-package org.iesalandalus.programacion.reservasaulas.mvc.vista;
+package org.iesalandalus.programacion.reservasaulas.mvc.vista.texto;
 
 import java.util.Iterator;
 import java.util.List;
@@ -12,8 +12,9 @@ import org.iesalandalus.programacion.reservasaulas.mvc.modelo.dominio.Permanenci
 import org.iesalandalus.programacion.reservasaulas.mvc.modelo.dominio.Profesor;
 import org.iesalandalus.programacion.reservasaulas.mvc.modelo.dominio.Reserva;
 import org.iesalandalus.programacion.reservasaulas.mvc.modelo.dominio.Tramo;
+import org.iesalandalus.programacion.reservasaulas.mvc.vista.IVista;
 
-public class Vista implements IVista {
+public class VistaTexto implements IVista {
 	private IControlador Icontrolador;
 
 	private final static String ERROR = "No existen reservas para el parámetro proporcionado";
@@ -22,7 +23,7 @@ public class Vista implements IVista {
 
 //Constructor de la vista, que corre el método setVista del enum Opcion para que éste sepa quién es la Vista y ejecute las opciones en
 //consecuencia. 
-	public Vista() {
+	public VistaTexto() {
 		Opcion.setVista(this);
 	}
 
