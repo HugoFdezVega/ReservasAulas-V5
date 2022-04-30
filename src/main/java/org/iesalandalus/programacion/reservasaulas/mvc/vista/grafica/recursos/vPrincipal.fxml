@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<TabPane fx:id="vPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="529.0" prefWidth="762.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.iesalandalus.programacion.reservasaulas.mvc.vista.grafica.controladores">
+  <tabs>
+    <Tab fx:id="pesProfesores" text="Profesores">
+      <content>
+        <AnchorPane fx:id="vProfesores" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <VBox prefHeight="500.0" prefWidth="762.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                     <children>
+                        <TableView fx:id="tabProfesores" cache="true">
+                          <columns>
+                            <TableColumn fx:id="colNombreProf" prefWidth="210.5" text="Nombre" />
+                            <TableColumn fx:id="colTelfProf" minWidth="0.0" prefWidth="178.5" text="Teléfono" />
+                              <TableColumn fx:id="colMailProf" prefWidth="229.0" text="E-Mail" />
+                              <TableColumn fx:id="colPuntosProf" prefWidth="143.0" text="Puntos" />
+                          </columns>
+                           <contextMenu>
+                              <ContextMenu>
+                                <items>
+                                  <MenuItem fx:id="menuBorrarProfesor" mnemonicParsing="false" onAction="#acBorrarProfesor" text="Borrar Profesor" />
+                                </items>
+                              </ContextMenu>
+                           </contextMenu>
+                        </TableView>
+                        <HBox alignment="CENTER_LEFT" prefHeight="104.0" prefWidth="762.0">
+                           <children>
+                              <Button fx:id="btAbrirAnadirProfesor" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#acAbrirAnadirProf" text="Añadir Profesor">
+                                 <HBox.margin>
+                                    <Insets left="20.0" right="50.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Button fx:id="btAbrirBuscarProfesor" mnemonicParsing="false" onAction="#acAbrirBuscarProf" text="Buscar Profesor" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab fx:id="pesAulas" text="Aulas">
+      <content>
+        <AnchorPane fx:id="vAulas" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <VBox layoutX="162.0" prefHeight="500.0" prefWidth="762.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                     <children>
+                        <TableView fx:id="tabAulas" prefHeight="444.0" prefWidth="742.0">
+                          <columns>
+                            <TableColumn fx:id="colNombreAula" prefWidth="382.0" text="Nombre" />
+                            <TableColumn fx:id="colPuestosAula" prefWidth="379.0" text="Puestos" />
+                          </columns>
+                           <contextMenu>
+                              <ContextMenu>
+                                 <items>
+                                    <MenuItem fx:id="menuBorrarAula" mnemonicParsing="false" onAction="#acBorrarAula" text="Borrar Aula" />
+                                 </items>
+                              </ContextMenu>
+                           </contextMenu>
+                        </TableView>
+                        <HBox alignment="CENTER_LEFT" prefHeight="150.0" prefWidth="762.0">
+                           <children>
+                              <Button fx:id="btAbrirAnadirAula" mnemonicParsing="false" onAction="#acAbrirAnadirAula" prefHeight="25.0" prefWidth="98.0" text="Añadir Aula">
+                                 <HBox.margin>
+                                    <Insets left="20.0" right="50.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Button fx:id="btAbrirBuscarAula" mnemonicParsing="false" onAction="#acAbrirBuscarAula" prefHeight="25.0" prefWidth="98.0" text="Buscar Aula" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+      <Tab fx:id="pesReservas" text="Reservas">
+         <content>
+            <AnchorPane fx:id="vReservas" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <VBox prefHeight="500.0" prefWidth="762.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                     <children>
+                        <TableView fx:id="tabReservas" cache="true">
+                           <columns>
+                              <TableColumn fx:id="colProfReservas" prefWidth="210.5" text="Profesor" />
+                              <TableColumn fx:id="colAulaReservas" minWidth="0.0" prefWidth="178.5" text="Aula" />
+                              <TableColumn fx:id="colPermReservas" prefWidth="217.5" text="Permanencia" />
+                              <TableColumn fx:id="colPuntosReservas" prefWidth="154.5" text="Puntos" />
+                           </columns>
+                           <contextMenu>
+                              <ContextMenu>
+                                 <items>
+                                    <MenuItem fx:id="menuBorrarReserva" mnemonicParsing="false" onAction="#acBorrarReserva" text="Borrar Reserva" />
+                                 </items>
+                              </ContextMenu>
+                           </contextMenu>
+                        </TableView>
+                        <HBox alignment="CENTER_LEFT" prefHeight="104.0" prefWidth="762.0">
+                           <children>
+                              <Button fx:id="btAbrirAnadirReserva" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#acAbrirAnadirProf" text="Añadir Reserva">
+                                 <HBox.margin>
+                                    <Insets left="20.0" right="50.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Button fx:id="btAbrirBuscarReserva" mnemonicParsing="false" onAction="#acAbrirBuscarProf" text="Buscar Reserva" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+  </tabs>
+</TabPane>
