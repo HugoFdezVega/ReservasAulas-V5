@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<TabPane fx:id="vPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="529.0" prefWidth="762.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.iesalandalus.programacion.reservasaulas.mvc.vista.grafica.controladores">
+<TabPane fx:id="vPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="577.0" prefWidth="841.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.iesalandalus.programacion.reservasaulas.mvc.vista.grafica.controladores.ControladorVPrincipal">
   <tabs>
     <Tab fx:id="pesProfesores" text="Profesores">
       <content>
@@ -20,12 +20,12 @@
                <children>
                   <VBox prefHeight="500.0" prefWidth="762.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
                      <children>
-                        <TableView fx:id="tabProfesores" cache="true">
+                        <TableView fx:id="tabProfesores" cache="true" prefHeight="388.0" prefWidth="702.0">
                           <columns>
                             <TableColumn fx:id="colNombreProf" prefWidth="210.5" text="Nombre" />
                             <TableColumn fx:id="colTelfProf" minWidth="0.0" prefWidth="178.5" text="Teléfono" />
                               <TableColumn fx:id="colMailProf" prefWidth="229.0" text="E-Mail" />
-                              <TableColumn fx:id="colPuntosProf" prefWidth="143.0" text="Puntos" />
+                              <TableColumn fx:id="colPuntosProf" prefWidth="202.0" text="Puntos" />
                           </columns>
                            <contextMenu>
                               <ContextMenu>
@@ -59,7 +59,7 @@
                         <TableView fx:id="tabAulas" prefHeight="444.0" prefWidth="742.0">
                           <columns>
                             <TableColumn fx:id="colNombreAula" prefWidth="382.0" text="Nombre" />
-                            <TableColumn fx:id="colPuestosAula" prefWidth="379.0" text="Puestos" />
+                            <TableColumn fx:id="colPuestosAula" prefWidth="438.0" text="Puestos" />
                           </columns>
                            <contextMenu>
                               <ContextMenu>
@@ -95,7 +95,7 @@
                               <TableColumn fx:id="colProfReservas" prefWidth="210.5" text="Profesor" />
                               <TableColumn fx:id="colAulaReservas" minWidth="0.0" prefWidth="178.5" text="Aula" />
                               <TableColumn fx:id="colPermReservas" prefWidth="217.5" text="Permanencia" />
-                              <TableColumn fx:id="colPuntosReservas" prefWidth="154.5" text="Puntos" />
+                              <TableColumn fx:id="colPuntosReservas" prefWidth="213.5" text="Puntos" />
                            </columns>
                            <contextMenu>
                               <ContextMenu>
@@ -107,12 +107,12 @@
                         </TableView>
                         <HBox alignment="CENTER_LEFT" prefHeight="104.0" prefWidth="762.0">
                            <children>
-                              <Button fx:id="btAbrirAnadirReserva" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#acAbrirAnadirProf" text="Añadir Reserva">
+                              <Button fx:id="btAbrirAnadirReserva" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#acAbrirAnadirReserva" text="Añadir Reserva">
                                  <HBox.margin>
                                     <Insets left="20.0" right="50.0" />
                                  </HBox.margin>
                               </Button>
-                              <Button fx:id="btAbrirBuscarReserva" mnemonicParsing="false" onAction="#acAbrirBuscarProf" text="Buscar Reserva" />
+                              <Button fx:id="btAbrirBuscarReserva" mnemonicParsing="false" onAction="#acAbrirBuscarReserva" text="Buscar Reserva" />
                            </children>
                         </HBox>
                      </children>

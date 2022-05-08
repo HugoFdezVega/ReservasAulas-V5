@@ -1,5 +1,7 @@
 package org.iesalandalus.programacion.reservasaulas.mvc.vista.grafica.controladores;
 
+import org.iesalandalus.programacion.reservasaulas.mvc.controlador.IControlador;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -13,6 +15,12 @@ import javafx.scene.control.TitledPane;
 
 public class ControladorVAnadirReserva {
 
+	private IControlador controladorMVC;
+	
+	public void setControladorMVC(IControlador controlador) {
+		this.controladorMVC=controlador;
+	}
+	
     @FXML
     private Button btAceptar;
 

@@ -37,6 +37,15 @@ public interface IControlador {
 	List<String> representarProfesores();
 
 	List<String> representarReservas();
+	
+	
+	List<Profesor> getProfesores();
+	
+	List<Aula> getAulas();
+	
+	List<Reserva> getReservas();
+	
+	
 
 	void realizarReserva(Reserva reserva) throws OperationNotSupportedException;
 

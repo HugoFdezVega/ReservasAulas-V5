@@ -15,6 +15,16 @@ public class Controlador implements IControlador {
 	private IModelo Imodelo;
 	private IVista Ivista;
 	
+	public List<Profesor> getProfesores() {
+		return Imodelo.getProfesores();
+	}
+	public List<Aula> getAulas(){
+		return Imodelo.getAulas();
+	}
+	public List<Reserva> getReservas() {
+		return Imodelo.getReservas();
+	}
+	
 //Constructor del controlador, que toma como parámetros el Modelo y la Vista, comprueba nulos, y luego se asigna a sí mismo a la Vista
 //para que ésta sepa quién es el Controlador.
 	public Controlador(IModelo modelo, IVista vista) 
