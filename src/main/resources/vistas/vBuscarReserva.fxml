@@ -22,11 +22,17 @@
                <HBox.margin>
                   <Insets left="10.0" top="10.0" />
                </HBox.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
             </Label>
             <Label text="Elige un tipo de permanencia:">
                <HBox.margin>
                   <Insets left="100.0" top="10.0" />
                </HBox.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
             </Label>
          </children>
       </HBox>
@@ -79,19 +85,19 @@
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </VBox.margin>
       </Button>
-      <Label textFill="#9f1515" underline="true">
+      <Label fx:id="lbError" textFill="#9f1515" underline="true">
          <VBox.margin>
             <Insets left="10.0" />
          </VBox.margin>
          <font>
-            <Font size="13.0" />
+            <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <TableView fx:id="tabReservas" cache="true" prefHeight="69.0" prefWidth="540.0">
+      <TableView fx:id="tabReservas" cache="true" prefHeight="152.0" prefWidth="540.0">
          <columns>
             <TableColumn fx:id="colProfReservas" prefWidth="178.0" text="Profesor" />
-            <TableColumn fx:id="colAulaReservas" minWidth="0.0" prefWidth="134.0" text="Aula" />
-            <TableColumn fx:id="colPermReservas" prefWidth="134.5" text="Permanencia" />
+            <TableColumn fx:id="colAulaReservas" minWidth="0.0" prefWidth="84.5" text="Aula" />
+            <TableColumn fx:id="colPermReservas" prefWidth="184.0" text="Permanencia" />
             <TableColumn fx:id="colPuntosReservas" prefWidth="92.5" text="Puntos" />
          </columns>
          <VBox.margin>

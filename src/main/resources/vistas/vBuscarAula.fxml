@@ -2,9 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ContextMenu?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
@@ -18,7 +16,10 @@
       <TitledPane fx:id="vBuscarAula" alignment="CENTER" animated="false" collapsible="false" text="Buscar Aula" />
       <HBox prefHeight="32.0" prefWidth="538.0" spacing="10.0">
          <children>
-            <Label text="Introduzca el nombre del aula:" />
+            <Label text="Introduzca el nombre del aula:">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
             <TextField fx:id="inputBuscarAula" prefHeight="25.0" prefWidth="230.0" />
             <Button fx:id="btBuscarAula" mnemonicParsing="false" onAction="#acBuscarAula" text="Buscar" />
          </children>
@@ -26,31 +27,27 @@
             <Insets left="10.0" top="10.0" />
          </VBox.margin>
       </HBox>
-      <Label textFill="#9f1515" underline="true">
+      <Label fx:id="lbError" textFill="#9f1515" underline="true">
          <VBox.margin>
             <Insets left="10.0" />
          </VBox.margin>
          <font>
-            <Font size="13.0" />
+            <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <TableView fx:id="tabAulas" prefHeight="51.0" prefWidth="539.0">
+      <TableView fx:id="tabAulas" prefHeight="107.0" prefWidth="540.0">
          <columns>
-            <TableColumn fx:id="colNombreAula" prefWidth="323.0" text="Nombre" />
-            <TableColumn fx:id="colPuestosAula" prefWidth="235.0" text="Puestos" />
+            <TableColumn fx:id="colNombreAula" prefWidth="234.0" resizable="false" text="Nombre" />
+            <TableColumn fx:id="colPuestosAula" prefWidth="224.0" resizable="false" text="Puestos" />
          </columns>
-         <contextMenu>
-            <ContextMenu>
-               <items>
-                  <MenuItem fx:id="menuBorrarAula" mnemonicParsing="false" onAction="#acBorrarAula" text="Borrar Aula" />
-               </items>
-            </ContextMenu>
-         </contextMenu>
          <VBox.margin>
-            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            <Insets bottom="10.0" left="50.0" right="50.0" top="10.0" />
          </VBox.margin>
       </TableView>
-      <Label text="Reservas para el aula" underline="true" />
+      <Label text="Reservas para el aula:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
       <TableView fx:id="tabReservas" cache="true" prefHeight="218.0" prefWidth="540.0">
          <columns>
             <TableColumn fx:id="colProfReservas" prefWidth="178.0" text="Profesor" />

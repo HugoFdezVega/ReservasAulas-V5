@@ -99,7 +99,7 @@ public class ControladorVPrincipal {
 		colProfReservas.setCellValueFactory(reserva -> new SimpleStringProperty(reserva.getValue().getProfesor().getNombre()));
 		colAulaReservas.setCellValueFactory(reserva -> new SimpleStringProperty(reserva.getValue().getAula().getNombre()));
 		colPermReservas.setCellValueFactory(reserva -> new SimpleStringProperty(reserva.getValue().getPermanencia().toString()));
-		colPuntosReservas.setCellValueFactory(reserva -> new SimpleStringProperty(String.valueOf(reserva.getValue().getAula().getPuntos())));
+		colPuntosReservas.setCellValueFactory(reserva -> new SimpleStringProperty(String.valueOf(reserva.getValue().getPuntos())));
 	}
     
 	//Método que actualiza las tablas, volcando el contenido de los getters en sus respectivas ObservableList. Inicialmente se corre
@@ -203,6 +203,8 @@ public class ControladorVPrincipal {
 		VBox raizAnadirReserva=cargadorVAnadirReserva.load();
 		cAnadirReserva=cargadorVAnadirReserva.getController();
 		cAnadirReserva.setControladorMVC(controladorMVC);
+		cAnadirReserva.setControladorVPrincipal(this);
+		cAnadirReserva.actualizaTablasReserva();
 		
 		Scene escenaAnadirReserva=new Scene(raizAnadirReserva);
 		anadirReserva.setTitle("Añadir Reserva");
@@ -212,22 +214,69 @@ public class ControladorVPrincipal {
     }
 
     @FXML
-    void acAbrirBuscarAula(ActionEvent event) {
-
+    void acAbrirBuscarAula(ActionEvent event) throws IOException {
+    	abrirBuscarAula();
+    	buscarAula.showAndWait();
+    }
+    
+    private void abrirBuscarAula() throws IOException {
+    	buscarAula = new Stage();
+		FXMLLoader cargadorVBuscarAula=new FXMLLoader(LocalizadorRecursos.class.getResource("/vistas/vBuscarAula.fxml"));
+		VBox raizBuscarAula=cargadorVBuscarAula.load();
+		cBuscarAula=cargadorVBuscarAula.getController();
+		cBuscarAula.setControladorMVC(controladorMVC);
+		// cBuscarAula.setControladorVPrincipal(this);
+		
+		Scene escenaBuscarAula=new Scene(raizBuscarAula);
+		buscarAula.setTitle("Buscar Aula");
+		buscarAula.setScene(escenaBuscarAula);
+		buscarAula.setResizable(false);
+		buscarAula.initModality(Modality.APPLICATION_MODAL);
     }
 
     @FXML
-    void acAbrirBuscarProf(ActionEvent event) {
-
+    void acAbrirBuscarProf(ActionEvent event) throws IOException {
+    	abrirBuscarProf();
+    	buscarProfesor.showAndWait();
     }
-
+    
+    private void abrirBuscarProf() throws IOException{
+    	buscarProfesor=new Stage();
+		FXMLLoader cargadorVBuscarProf=new FXMLLoader(LocalizadorRecursos.class.getResource("/vistas/vBuscarProf.fxml"));
+		VBox raizBuscarProf=cargadorVBuscarProf.load();
+		cBuscarProf=cargadorVBuscarProf.getController();
+		cBuscarProf.setControladorMVC(controladorMVC);
+		cBuscarProf.setControladorVPrincipal(this);
+		
+		Scene escenaBuscarProf=new Scene(raizBuscarProf);
+		buscarProfesor.setTitle("Buscar Profesor");
+		buscarProfesor.setScene(escenaBuscarProf);
+		buscarProfesor.setResizable(false);
+		buscarProfesor.initModality(Modality.APPLICATION_MODAL);
+    }
     @FXML
-    void acAbrirBuscarReserva(ActionEvent event) {
-
+    void acAbrirBuscarReserva(ActionEvent event) throws IOException {
+    	abrirBuscarReserva();
+    	buscarReserva.showAndWait();
+    }
+    
+    private void abrirBuscarReserva() throws IOException {
+    	buscarReserva=new Stage();
+		FXMLLoader cargadorVBuscarReserva=new FXMLLoader(LocalizadorRecursos.class.getResource("/vistas/vBuscarReserva.fxml"));
+		VBox raizBuscarReserva=cargadorVBuscarReserva.load();
+		cBuscarReserva=cargadorVBuscarReserva.getController();
+		cBuscarReserva.setControladorMVC(controladorMVC);
+		cBuscarReserva.setControladorVPrincipal(this);
+		
+		Scene escenaBuscarReserva=new Scene(raizBuscarReserva);
+		buscarReserva.setTitle("Buscar Reserva");
+		buscarReserva.setScene(escenaBuscarReserva);
+		buscarReserva.setResizable(false);
+		buscarReserva.initModality(Modality.APPLICATION_MODAL);
     }
 
     // Método que calcula los puntos que ha gastado un profesor y devuelve cuántos le quedan disponibles
-    private String puntosDisponibles (Profesor profesor) {
+    public String puntosDisponibles (Profesor profesor) {
     	float puntosGastados=0;
     	float puntosDisponibles=200;
     	float puntosFinales=0;

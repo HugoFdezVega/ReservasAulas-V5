@@ -16,7 +16,10 @@
       <TitledPane fx:id="vBuscarProf" alignment="CENTER" animated="false" collapsible="false" text="Buscar Profesor" />
       <HBox prefHeight="32.0" prefWidth="538.0" spacing="10.0">
          <children>
-            <Label text="Introduzca el correo del profesor:" />
+            <Label text="Introduzca el correo del profesor:">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
             <TextField fx:id="inputBuscarProf" prefHeight="25.0" prefWidth="230.0" />
             <Button fx:id="btBuscarProf" mnemonicParsing="false" onAction="#acBuscarProf" text="Buscar" />
          </children>
@@ -24,26 +27,29 @@
             <Insets left="10.0" top="10.0" />
          </VBox.margin>
       </HBox>
-      <Label textFill="#9f1515" underline="true">
+      <Label fx:id="lbError" textFill="#9f1515" underline="true">
          <VBox.margin>
             <Insets left="10.0" />
          </VBox.margin>
          <font>
-            <Font size="13.0" />
+            <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <TableView fx:id="tabProfesores" cache="true" prefHeight="54.0" prefWidth="540.0">
+      <TableView fx:id="tabProfesores" cache="true" prefHeight="99.0" prefWidth="540.0">
          <columns>
             <TableColumn fx:id="colNombreProf" prefWidth="128.0" text="Nombre" />
             <TableColumn fx:id="colTelfProf" minWidth="0.0" prefWidth="114.0" text="Teléfono" />
-            <TableColumn fx:id="colMailProf" prefWidth="173.0" text="E-Mail" />
-            <TableColumn fx:id="colPuntosProf" prefWidth="132.0" text="Puntos" />
+            <TableColumn fx:id="colMailProf" prefWidth="175.5" text="E-Mail" />
+            <TableColumn fx:id="colPuntosProf" prefWidth="121.5" text="Puntos" />
          </columns>
          <VBox.margin>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </VBox.margin>
       </TableView>
-      <Label text="Reservas del profesor" underline="true" />
+      <Label text="Reservas del profesor:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
       <TableView fx:id="tabReservas" cache="true" prefHeight="218.0" prefWidth="540.0">
          <columns>
             <TableColumn fx:id="colProfReservas" prefWidth="178.0" text="Profesor" />
