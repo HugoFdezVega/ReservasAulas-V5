@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<TitledPane fx:id="vAnadirProf" alignment="CENTER" animated="false" collapsible="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="243.0" prefWidth="368.0" text="Añadir Profesor" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.iesalandalus.programacion.reservasaulas.mvc.vista.grafica.controladores.ControladorVAnadirProf">
+<TitledPane fx:id="vAnadirProf" alignment="CENTER" animated="false" collapsible="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="243.0" prefWidth="368.0" stylesheets="/estilos/style.css" text="Añadir Profesor" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.iesalandalus.programacion.reservasaulas.mvc.vista.grafica.controladores.ControladorVAnadirProf">
   <content>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
          <children>
@@ -68,7 +68,7 @@
                   <HBox prefHeight="83.0" prefWidth="380.0" spacing="20.0">
                      <children>
                         <Button fx:id="btAceptar" mnemonicParsing="false" onAction="#acAnadirProfesor" prefHeight="25.0" prefWidth="91.0" text="Aceptar" />
-                        <Button fx:id="btCancelar" mnemonicParsing="false" onAction="#acCancelar" prefHeight="25.0" prefWidth="98.0" text="Cancelar" />
+                        <Button fx:id="btCancelar" mnemonicParsing="false" onAction="#acCancelar" prefHeight="25.0" prefWidth="91.0" text="Cancelar" />
                      </children>
                      <padding>
                         <Insets left="20.0" top="20.0" />

@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="634.0" prefWidth="796.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.iesalandalus.programacion.reservasaulas.mvc.vista.grafica.controladores.ControladorVAnadirReserva">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="634.0" prefWidth="796.0" stylesheets="/estilos/style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.iesalandalus.programacion.reservasaulas.mvc.vista.grafica.controladores.ControladorVAnadirReserva">
    <children>
       <TitledPane fx:id="vAnadirReserva" alignment="CENTER" animated="false" collapsible="false" text="Añadir reserva" />
       <VBox prefHeight="593.0" prefWidth="796.0">
@@ -120,8 +120,8 @@
             </HBox>
             <HBox prefHeight="55.0" prefWidth="796.0" spacing="30.0">
                <children>
-                  <Button fx:id="btAceptar" mnemonicParsing="false" onAction="#acAnadirReserva" text="Aceptar" />
-                  <Button fx:id="btCancelar" mnemonicParsing="false" onAction="#acCancelar" text="Cancelar" />
+                  <Button fx:id="btAceptar" mnemonicParsing="false" onAction="#acAnadirReserva" prefHeight="25.0" prefWidth="91.0" text="Aceptar" />
+                  <Button fx:id="btCancelar" mnemonicParsing="false" onAction="#acCancelar" prefHeight="25.0" prefWidth="91.0" text="Cancelar" />
                </children>
                <padding>
                   <Insets left="20.0" top="10.0" />

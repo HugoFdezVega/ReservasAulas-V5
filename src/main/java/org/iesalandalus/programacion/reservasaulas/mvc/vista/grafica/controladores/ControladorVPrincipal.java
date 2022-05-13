@@ -16,16 +16,19 @@ import org.iesalandalus.programacion.reservasaulas.mvc.modelo.dominio.Profesor;
 import org.iesalandalus.programacion.reservasaulas.mvc.modelo.dominio.Reserva;
 import org.iesalandalus.programacion.reservasaulas.mvc.vista.grafica.recursos.LocalizadorRecursos;
 
+import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TitledPane;
+import javafx.scene.control.Tooltip;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
@@ -33,6 +36,8 @@ import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.ProgressBar;
+import javafx.scene.control.ProgressIndicator;
 import javafx.scene.control.Tab;
 
 
@@ -56,7 +61,7 @@ public class ControladorVPrincipal {
 		@FXML private TableColumn<Profesor, String> colNombreProf;
 		@FXML private TableColumn<Profesor, String> colTelfProf;
 		@FXML private TableColumn<Profesor, String> colMailProf;
-		@FXML private TableColumn<Profesor, String> colPuntosProf;
+		@FXML private TableColumn<Profesor, ProgressBar> colPuntosProf;
 		
 	@FXML private TableView<Aula> tabAulas;
     	@FXML private TableColumn<Aula, String> colNombreAula;
@@ -89,7 +94,8 @@ public class ControladorVPrincipal {
 		colNombreProf.setCellValueFactory(profesor -> new SimpleStringProperty(profesor.getValue().getNombre()));
 		colTelfProf.setCellValueFactory(profesor -> new SimpleStringProperty(profesor.getValue().getTelefono()));
 		colMailProf.setCellValueFactory(profesor -> new SimpleStringProperty(profesor.getValue().getCorreo()));
-		colPuntosProf.setCellValueFactory(profesor -> new SimpleStringProperty(puntosDisponibles(profesor.getValue())));
+		colPuntosProf.setCellValueFactory(profesor -> new SimpleObjectProperty<ProgressBar>(crearBarra(profesor.getValue())));
+
 		
 		tabAulas.setItems(aulas);
 		colNombreAula.setCellValueFactory(aula -> new SimpleStringProperty(aula.getValue().getNombre()));
@@ -276,7 +282,7 @@ public class ControladorVPrincipal {
     }
 
     // Método que calcula los puntos que ha gastado un profesor y devuelve cuántos le quedan disponibles
-    public String puntosDisponibles (Profesor profesor) {
+    public float puntosDisponibles (Profesor profesor) {
     	float puntosGastados=0;
     	float puntosDisponibles=200;
     	float puntosFinales=0;
@@ -294,7 +300,25 @@ public class ControladorVPrincipal {
         	}
         	puntosFinales=puntosDisponibles-puntosGastados;
     	}
-    	return String.valueOf(puntosFinales);
+    	return puntosFinales;
+    }
+    
+    public ProgressBar crearBarra(Profesor profesor) {
+    	float puntuacion=puntosDisponibles(profesor)/200;
+    	ProgressBar barra = new ProgressBar(puntuacion);
+		Tooltip puntosDispo = new Tooltip ("Puntos disponibles: "+puntosDisponibles(profesor));
+		barra.setTooltip(puntosDispo);
+    	barra.setMinWidth(190);
+    	if (puntuacion<0.25) {
+    		barra.setStyle("-fx-accent: red;");
+    	}
+    	else if (puntuacion>0.5) {
+    		barra.setStyle("-fx-accent: green;");
+    	}
+    	else {
+    		barra.setStyle("-fx-accent: orange;");
+    	}
+    	return barra;
     }
     
     /*

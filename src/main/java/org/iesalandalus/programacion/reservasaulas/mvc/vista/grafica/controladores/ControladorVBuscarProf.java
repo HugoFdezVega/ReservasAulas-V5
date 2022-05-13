@@ -54,7 +54,7 @@ public class ControladorVBuscarProf {
     		colNombreProf.setCellValueFactory(profesor -> new SimpleStringProperty(profesor.getValue().getNombre()));
     		colTelfProf.setCellValueFactory(profesor -> new SimpleStringProperty(profesor.getValue().getTelefono()));
     		colMailProf.setCellValueFactory(profesor -> new SimpleStringProperty(profesor.getValue().getCorreo()));
-    		colPuntosProf.setCellValueFactory(profesor -> new SimpleStringProperty(cVPrincipal.puntosDisponibles(profesor.getValue())));
+    		colPuntosProf.setCellValueFactory(profesor -> new SimpleStringProperty(String.valueOf(cVPrincipal.puntosDisponibles(profesor.getValue()))));
     		
     		tabReservas.setItems(reservas);
     		colProfReservas.setCellValueFactory(reserva -> new SimpleStringProperty(reserva.getValue().getProfesor().getNombre()));

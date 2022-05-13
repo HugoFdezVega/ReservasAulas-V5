@@ -8,19 +8,21 @@
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<TabPane fx:id="vPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="577.0" prefWidth="841.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.iesalandalus.programacion.reservasaulas.mvc.vista.grafica.controladores.ControladorVPrincipal">
+<TabPane fx:id="vPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="542.0" prefWidth="841.0" stylesheets="/estilos/style.css" tabClosingPolicy="UNAVAILABLE" tabMinHeight="30.0" tabMinWidth="70.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.iesalandalus.programacion.reservasaulas.mvc.vista.grafica.controladores.ControladorVPrincipal">
   <tabs>
     <Tab fx:id="pesProfesores" text="Profesores">
       <content>
         <AnchorPane fx:id="vProfesores" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
-                  <VBox prefHeight="500.0" prefWidth="762.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                  <VBox layoutY="10.0" prefHeight="500.0" prefWidth="762.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
                      <children>
-                        <TableView fx:id="tabProfesores" cache="true" prefHeight="388.0" prefWidth="702.0">
+                        <TableView fx:id="tabProfesores" cache="true" prefHeight="388.0" prefWidth="819.0">
                           <columns>
                             <TableColumn fx:id="colNombreProf" prefWidth="210.5" text="Nombre" />
                             <TableColumn fx:id="colTelfProf" minWidth="0.0" prefWidth="178.5" text="Teléfono" />
@@ -37,12 +39,26 @@
                         </TableView>
                         <HBox alignment="CENTER_LEFT" prefHeight="104.0" prefWidth="762.0">
                            <children>
-                              <Button fx:id="btAbrirAnadirProfesor" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#acAbrirAnadirProf" text="Añadir Profesor">
+                              <Button fx:id="btAbrirAnadirProfesor" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#acAbrirAnadirProf" prefHeight="40.0" prefWidth="160.0" text="Añadir Profesor">
                                  <HBox.margin>
                                     <Insets left="20.0" right="50.0" />
                                  </HBox.margin>
+                                 <graphic>
+                                    <ImageView fitHeight="36.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../imagenes/añadir.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
                               </Button>
-                              <Button fx:id="btAbrirBuscarProfesor" mnemonicParsing="false" onAction="#acAbrirBuscarProf" text="Buscar Profesor" />
+                              <Button fx:id="btAbrirBuscarProfesor" mnemonicParsing="false" onAction="#acAbrirBuscarProf" prefHeight="40.0" prefWidth="160.0" text="Buscar Profesor">
+                                 <graphic>
+                                    <ImageView fitHeight="36.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../imagenes/buscar.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic></Button>
                            </children>
                         </HBox>
                      </children>
@@ -56,7 +72,7 @@
                <children>
                   <VBox layoutX="162.0" prefHeight="500.0" prefWidth="762.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
                      <children>
-                        <TableView fx:id="tabAulas" prefHeight="444.0" prefWidth="742.0">
+                        <TableView fx:id="tabAulas" prefHeight="388.0" prefWidth="702.0">
                           <columns>
                             <TableColumn fx:id="colNombreAula" prefWidth="382.0" text="Nombre" />
                             <TableColumn fx:id="colPuestosAula" prefWidth="438.0" text="Puestos" />
@@ -69,14 +85,28 @@
                               </ContextMenu>
                            </contextMenu>
                         </TableView>
-                        <HBox alignment="CENTER_LEFT" prefHeight="150.0" prefWidth="762.0">
+                        <HBox alignment="CENTER_LEFT" prefHeight="104.0" prefWidth="766.0">
                            <children>
-                              <Button fx:id="btAbrirAnadirAula" mnemonicParsing="false" onAction="#acAbrirAnadirAula" prefHeight="25.0" prefWidth="98.0" text="Añadir Aula">
+                              <Button fx:id="btAbrirAnadirAula" mnemonicParsing="false" onAction="#acAbrirAnadirAula" prefHeight="40.0" prefWidth="160.0" text="Añadir Aula">
                                  <HBox.margin>
                                     <Insets left="20.0" right="50.0" />
                                  </HBox.margin>
+                                 <graphic>
+                                    <ImageView fitHeight="36.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../imagenes/añadir.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
                               </Button>
-                              <Button fx:id="btAbrirBuscarAula" mnemonicParsing="false" onAction="#acAbrirBuscarAula" prefHeight="25.0" prefWidth="98.0" text="Buscar Aula" />
+                              <Button fx:id="btAbrirBuscarAula" mnemonicParsing="false" onAction="#acAbrirBuscarAula" prefHeight="40.0" prefWidth="160.0" text="Buscar Aula">
+                                 <graphic>
+                                    <ImageView fitHeight="36.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../imagenes/buscar.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic></Button>
                            </children>
                         </HBox>
                      </children>
@@ -90,7 +120,7 @@
                <children>
                   <VBox prefHeight="500.0" prefWidth="762.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
                      <children>
-                        <TableView fx:id="tabReservas" cache="true">
+                        <TableView fx:id="tabReservas" cache="true" prefHeight="388.0" prefWidth="702.0">
                            <columns>
                               <TableColumn fx:id="colProfReservas" prefWidth="210.5" text="Profesor" />
                               <TableColumn fx:id="colAulaReservas" minWidth="0.0" prefWidth="178.5" text="Aula" />
@@ -105,14 +135,28 @@
                               </ContextMenu>
                            </contextMenu>
                         </TableView>
-                        <HBox alignment="CENTER_LEFT" prefHeight="104.0" prefWidth="762.0">
+                        <HBox alignment="CENTER_LEFT" prefHeight="104.0" prefWidth="766.0">
                            <children>
-                              <Button fx:id="btAbrirAnadirReserva" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#acAbrirAnadirReserva" text="Añadir Reserva">
+                              <Button fx:id="btAbrirAnadirReserva" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#acAbrirAnadirReserva" prefHeight="40.0" prefWidth="160.0" text="Añadir Reserva">
                                  <HBox.margin>
                                     <Insets left="20.0" right="50.0" />
                                  </HBox.margin>
+                                 <graphic>
+                                    <ImageView fitHeight="36.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../imagenes/añadir.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
                               </Button>
-                              <Button fx:id="btAbrirBuscarReserva" mnemonicParsing="false" onAction="#acAbrirBuscarReserva" text="Buscar Reserva" />
+                              <Button fx:id="btAbrirBuscarReserva" mnemonicParsing="false" onAction="#acAbrirBuscarReserva" prefHeight="40.0" prefWidth="160.0" text="Buscar Reserva">
+                                 <graphic>
+                                    <ImageView fitHeight="36.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../imagenes/buscar.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic></Button>
                            </children>
                         </HBox>
                      </children>
