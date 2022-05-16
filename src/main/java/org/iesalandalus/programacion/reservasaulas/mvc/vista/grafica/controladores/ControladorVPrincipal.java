@@ -321,6 +321,28 @@ public class ControladorVPrincipal {
     	return barra;
     }
     
+
+    
+
+    @FXML
+    void acSalir(ActionEvent event) {
+    	if(Dialogos.mostrarDialogoConfirmacion("Salir", "¿Seguro que desea cerrar la aplicación?", null)) {
+    		controladorMVC.terminar();
+    		System.exit(0);
+    	}
+    }
+    
+    @FXML
+    void acAcercaDe(ActionEvent event) throws IOException {
+		VBox contenido = FXMLLoader.load(LocalizadorRecursos.class.getResource("/vistas/AcercaDe.fxml"));
+		Dialogos.mostrarDialogoInformacionPersonalizado("Gestión de reservas", contenido);
+    }
+    
+    @FXML
+    private MenuItem miAyuda;
+
+    @FXML
+    private MenuItem miSalir;
     /*
     @FXML
     private MenuItem menuBorrarAula;

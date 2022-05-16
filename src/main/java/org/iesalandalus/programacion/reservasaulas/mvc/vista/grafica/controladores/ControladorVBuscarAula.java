@@ -1,5 +1,7 @@
 package org.iesalandalus.programacion.reservasaulas.mvc.vista.grafica.controladores;
 
+import java.util.List;
+
 import org.iesalandalus.programacion.reservasaulas.mvc.controlador.IControlador;
 import org.iesalandalus.programacion.reservasaulas.mvc.modelo.dominio.Aula;
 import org.iesalandalus.programacion.reservasaulas.mvc.modelo.dominio.Reserva;
@@ -66,7 +68,10 @@ public class ControladorVBuscarAula {
     		lbError.setText("No existe ningún aula con ese nombre");
     	} else {
     		aulas.add(aulaEncontrada);
-    		reservas.setAll(controladorMVC.getReservasAula(aulaEncontrada));
+    		List<Reserva> reservasAula=controladorMVC.getReservasAula(aulaEncontrada);
+    		if (reservasAula!=null) {
+    			reservas.setAll(controladorMVC.getReservasAula(aulaEncontrada));
+    		}
     	}
     }
 

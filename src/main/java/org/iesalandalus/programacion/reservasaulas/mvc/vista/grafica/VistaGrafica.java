@@ -10,6 +10,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.TabPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
@@ -38,7 +39,7 @@ public class VistaGrafica extends Application implements IVista {
 	public void start(Stage escenarioPrincipal){
 		try {
 			FXMLLoader cargadorVentanaPrincipal=new FXMLLoader(LocalizadorRecursos.class.getResource("/vistas/vPrincipal.fxml"));
-			TabPane raiz=cargadorVentanaPrincipal.load();
+			VBox raiz=cargadorVentanaPrincipal.load();
 			ControladorVPrincipal cVentanaPrincipal=cargadorVentanaPrincipal.getController();
 			cVentanaPrincipal.setControladorMVC(controladorMVC);
 			cVentanaPrincipal.actualizaTablas();

@@ -79,7 +79,10 @@ public class ControladorVBuscarProf {
     		lbError.setText("No existe ningún profesor con ese correo");
     	} else {
     		profesores.add(profesorEncontrado);
-    		reservas.setAll(controladorMVC.getReservasProfesor(profesorEncontrado));
+    		List<Reserva> reservasProfesor=controladorMVC.getReservasProfesor(profesorEncontrado);
+    		if (reservasProfesor!=null) {
+    			reservas.setAll(controladorMVC.getReservasProfesor(profesorEncontrado));
+    		}
     	}
     }
     
