@@ -27,6 +27,8 @@ public class MainApp {
 				fDatos = FactoriaFuenteDatos.MEMORIA.crear();
 			} else if (argumento.equals("-mFicheros")) {
 				fDatos = FactoriaFuenteDatos.FICHEROS.crear();
+			} else if (argumento.equals("-mMongoDB")) {
+				fDatos = FactoriaFuenteDatos.MONGODB.crear();
 			}
 		}
 		return fDatos;

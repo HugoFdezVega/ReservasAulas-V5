@@ -2,6 +2,7 @@ package org.iesalandalus.programacion.reservasaulas.mvc.modelo;
 
 import org.iesalandalus.programacion.reservasaulas.mvc.modelo.negocio.ficheros.FactoriaFuenteDatosFicheros;
 import org.iesalandalus.programacion.reservasaulas.mvc.modelo.negocio.memoria.FactoriaFuenteDatosMemoria;
+import org.iesalandalus.programacion.reservasaulas.mvc.modelo.negocio.mongodb.FactoriaFuenteDatosMongodb;
 
 public enum FactoriaFuenteDatos {
 	MEMORIA{
@@ -16,6 +17,13 @@ public enum FactoriaFuenteDatos {
 		public IFuenteDatos crear() {
 			IFuenteDatos ficheros=new FactoriaFuenteDatosFicheros();
 			return ficheros;
+		}
+	},
+	MONGODB {
+		@Override
+		public IFuenteDatos crear() {
+			IFuenteDatos mongodb=new FactoriaFuenteDatosMongodb();
+			return mongodb;
 		}
 	};
 	
